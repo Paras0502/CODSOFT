@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dark Purple Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #301934 0%, #1A1A1A 100%);
+            color: #fff;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 48px;
+            background: rgba(48, 25, 52, 0.92);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navbar .logo {
+            font-size: 2em;
+            font-weight: bold;
+            color: #b983ff;
+        }
+
+        .navbar nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: 500;
+            font-size: 1em;
+            transition: color 0.2s;
+        }
+
+        .navbar nav a:hover {
+            color: #b983ff;
+        }
+
+        .navbar .cta-btn {
+            background: #b983ff;
+            color: #301934;
+            border: none;
+            padding: 10px 26px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1em;
+            cursor: pointer;
+            box-shadow: 0 2px 10px #b983ff30;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .navbar .cta-btn:hover {
+            background: #fff;
+            color: #301934;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px 60px 20px;
+            background: linear-gradient(135deg, #301934ee 0%, #1A1A1Aee 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.8em;
+            margin-bottom: 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #fff;
+            text-shadow: 0 2px 16px #2C1F2F88;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 32px;
+            color: #cbb4d4;
+        }
+
+        .hero .hero-btns button {
+            background: #b983ff;
+            color: #301934;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 0 10px;
+            box-shadow: 0 2px 10px #b983ff30;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .hero .hero-btns button:hover {
+            background: #fff;
+            color: #301934;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding: 36px 0;
+            background: linear-gradient(90deg, #2C1F2F 0%, #1A1A1A 100%);
+        }
+
+        .feature {
+            text-align: center;
+            max-width: 220px;
+        }
+
+        .feature i {
+            font-size: 2.3em;
+            margin-bottom: 10px;
+            display: block;
+            color: #b983ff;
+        }
+
+        .feature-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1.2em;
+            color: #fff;
+        }
+
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 0 40px 0;
+            background: #1A1A1A;
+            gap: 50px;
+        }
+
+        .about-text {
+            max-width: 480px;
+        }
+
+        .about-text h2 {
+            font-size: 2em;
+            margin-bottom: 12px;
+            color: #b983ff;
+        }
+
+        .about-text p {
+            font-size: 1.1em;
+            color: #cbb4d4;
+            margin-bottom: 18px;
+        }
+
+        .about-text .about-btn {
+            background: #b983ff;
+            color: #301934;
+            border: none;
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .about-text .about-btn:hover {
+            background: #fff;
+            color: #301934;
+        }
+
+        .about-img {
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            background: linear-gradient(120deg, #301934 0%, #b983ff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 24px #2C1F2F33;
+        }
+
+        .about-img img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .services-section {
+            background: #1A1A1A;
+            padding: 60px 0 40px 0;
+            text-align: center;
+        }
+
+        .services-section h2 {
+            color: #b983ff;
+            font-size: 2em;
+            margin-bottom: 32px;
+        }
+
+        .services-list {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            background: #2C1F2F;
+            border-radius: 18px;
+            box-shadow: 0 2px 16px #30193414;
+            padding: 36px 28px;
+            max-width: 260px;
+            margin-bottom: 30px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            color: #fff;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.04);
+            box-shadow: 0 8px 32px #b983ff33;
+        }
+
+        .service-card i {
+            font-size: 2.2em;
+            color: #b983ff;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .service-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: #fff;
+        }
+
+        .service-desc {
+            color: #cbb4d4;
+            font-size: 1em;
+        }
+
+        .footer {
+            background: linear-gradient(90deg, #301934 0%, #1A1A1A 100%);
+            color: #fff;
+            text-align: center;
+            padding: 22px 0;
+            font-size: 1em;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 950px) {
+            .about-section {
+                flex-direction: column;
+                gap: 30px;
+                padding: 40px 0 30px 0;
+            }
+
+            .about-img {
+                margin-bottom: 18px;
+            }
+
+            .features {
+                flex-direction: column;
+                gap: 28px;
+                padding: 28px 0;
+            }
+
+            .services-list {
+                flex-direction: column;
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0 10px;
+            }
+
+            .hero {
+                padding: 70px 10px 40px 10px;
+            }
+
+            .about-section {
+                padding: 30px 0 20px 0;
+            }
+
+            .services-section {
+                padding: 30px 0 20px 0;
+            }
+        }
+    </style>
+    
+    <script src="https://kit.fontawesome.com/4e7e2f1b1f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+   
+    <div class="navbar">
+        <div class="logo">Brandify</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="cta-btn">Get Started</button>
+    </div>
+   
+    <section class="hero">
+        <h1>We Empower Your Digital Presence</h1>
+        <p>Innovative solutions for modern businesses. We help you launch, grow, and succeed online with creative
+            strategies and world-class support.</p>
+        <div class="hero-btns">
+            <button>Learn More</button>
+            <button>Request a Demo</button>
+        </div>
+    </section>
+   
+    <section class="features">
+        <div class="feature">
+            <i class="fas fa-rocket"></i>
+            <div class="feature-title">Fast Launch</div>
+            <div>Get your business online in days, not weeks.</div>
+        </div>
+        <div class="feature">
+            <i class="fas fa-users"></i>
+            <div class="feature-title">Dedicated Support</div>
+            <div>Our team is here for you 24/7, every step of the way.</div>
+        </div>
+        <div class="feature">
+            <i class="fas fa-clock"></i>
+            <div class="feature-title">Time Management</div>
+            <div>Efficient processes to save you time and money.</div>
+        </div>
+    </section>
+    
+    <section class="about-section" id="about">
+        <div class="about-img">
+            <img src="LPU PIC.jpg" alt="Team Member">
+        </div>
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>Eager to launch my career, I bring fresh ideas, a strong work ethic, and a passion for learning to every project. My
+            goal is to turn challenges into opportunities and grow alongside inspiring teams.</p>
+            <p>From startups to established enterprises, we provide tailored services that drive growth, engagement, and
+                success in the digital landscape.</p>
+            <button class="about-btn">Read More</button>
+        </div>
+    </section>
+   
+    <section class="services-section" id="services">
+        <h2>Our Services</h2>
+        <div class="services-list">
+            <div class="service-card">
+                <i class="fas fa-lightbulb"></i>
+                <div class="service-title">User Experience</div>
+                <div class="service-desc">Crafting seamless and intuitive experiences for your users.</div>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-paint-brush"></i>
+                <div class="service-title">Creative Design</div>
+                <div class="service-desc">Visually stunning designs that capture your brand's personality.</div>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-eye"></i>
+                <div class="service-title">Retina Ready</div>
+                <div class="service-desc">High-resolution graphics for crisp, clear visuals on any device.</div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        &copy; 2025 Brandify. All rights reserved.
+    </footer>
+</body>
+
+</html>
